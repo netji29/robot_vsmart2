@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2.2 (Python 3.13.3 on win32)" generated="2025-06-30T16:39:18.660124" rpa="false" schemaversion="5">
+<suite id="s1" name="Valide Login" source="C:\robotframework\login_tests\valide_login.robot">
+<kw name="Open Browser To Login Page" owner="resource" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-06-30T16:39:19.005407" level="INFO">Opening browser 'chrome' to base url 'https://volunteer-smart-beta.nu.ac.th/pwa_main'.</msg>
+<arg>${LOGIN URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-06-30T16:39:19.005213" elapsed="1.706634"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-06-30T16:39:20.712182" elapsed="0.037037"/>
+</kw>
+<kw name="Set Selenium Speed" owner="SeleniumLibrary">
+<arg>${DELAY}</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" start="2025-06-30T16:39:20.749493" elapsed="0.000382"/>
+</kw>
+<kw name="Click Close Announcement" owner="resource">
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>css:div#announcementModal</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-06-30T16:39:20.750705" elapsed="0.892298"/>
+</kw>
+<msg time="2025-06-30T16:39:21.643190" level="INFO">${popup} = True</msg>
+<var>${popup}</var>
+<arg>Wait Until Element Is Visible</arg>
+<arg>css:div#announcementModal</arg>
+<arg>timeout=5s</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2025-06-30T16:39:20.750478" elapsed="0.892751"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-06-30T16:39:21.644054" level="INFO">Executing JavaScript:
+document.querySelector('#announcementModal').remove();
+Without any arguments.</msg>
+<arg>document.querySelector('#announcementModal').remove();</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-06-30T16:39:21.643636" elapsed="0.007199"/>
+</kw>
+<arg>${popup}</arg>
+<arg>Execute Javascript</arg>
+<arg>document.querySelector('#announcementModal').remove();</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-06-30T16:39:21.643389" elapsed="0.007534"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-06-30T16:39:22.651763" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-06-30T16:39:21.651236" elapsed="1.000715"/>
+</kw>
+<arg>${popup}</arg>
+<arg>Sleep</arg>
+<arg>1s</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-06-30T16:39:21.651054" elapsed="1.001028"/>
+</kw>
+<doc>Remove announcement modal if present</doc>
+<status status="PASS" start="2025-06-30T16:39:20.750145" elapsed="1.902086"/>
+</kw>
+<kw name="Login Page Should Be Open" owner="resource">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>css:input#username</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-06-30T16:39:22.652797" elapsed="0.027798"/>
+</kw>
+<doc>Wait until the login form appears</doc>
+<status status="PASS" start="2025-06-30T16:39:22.652509" elapsed="0.028191"/>
+</kw>
+<status status="PASS" start="2025-06-30T16:39:19.004736" elapsed="3.676014"/>
+</kw>
+<test id="s1-t1" name="Valid Login" line="13">
+<kw name="Input Username" owner="resource">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>css:input#username</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-06-30T16:39:22.681647" elapsed="0.009217"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-06-30T16:39:22.691169" level="INFO">Clicking element 'css:input#username'.</msg>
+<msg time="2025-06-30T16:39:24.050224" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-7.png"&gt;&lt;img src="selenium-screenshot-7.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-06-30T16:39:24.050473" level="FAIL">ElementClickInterceptedException: Message: element click intercepted: Element &lt;input type="text" class="form-control " name="username" id="username" autocomplete="off" aria-describedby="addon-username" required=""&gt; is not clickable at point (783, 306). Other element would receive the click: &lt;div class="modal-backdrop fade show"&gt;&lt;/div&gt;
+  (Session info: chrome=137.0.7151.120)
+Stacktrace:
+	GetHandleVerifier [0x0x7ff68c94cda5+78885]
+	GetHandleVerifier [0x0x7ff68c94ce00+78976]
+	(No symbol) [0x0x7ff68c709bca]
+	(No symbol) [0x0x7ff68c768779]
+	(No symbol) [0x0x7ff68c766112]
+	(No symbol) [0x0x7ff68c763151]
+	(No symbol) [0x0x7ff68c762041]
+	(No symbol) [0x0x7ff68c753654]
+	(No symbol) [0x0x7ff68c788b8a]
+	(No symbol) [0x0x7ff68c752f06]
+	(No symbol) [0x0x7ff68c788da0]
+	(No symbol) [0x0x7ff68c7b122f]
+	(No symbol) [0x0x7ff68c788963]
+	(No symbol) [0x0x7ff68c7516b1]
+	(No symbol) [0x0x7ff68c752443]
+	GetHandleVerifier [0x0x7ff68cc24eed+3061101]
+	GetHandleVerifier [0x0x7ff68cc1f33d+3037629]
+	GetHandleVerifier [0x0x7ff68cc3e592+3165202]
+	GetHandleVerifier [0x0x7ff68c96730e+186766]
+	GetHandleVerifier [0x0x7ff68c96eb3f+217535]
+	GetHandleVerifier [0x0x7ff68c9559b4+114740]
+	GetHandleVerifier [0x0x7ff68c955b69+115177]
+	GetHandleVerifier [0x0x7ff68c93c368+10728]
+	BaseThreadInitThunk [0x0x7ffc563de8d7+23]
+	RtlUserThreadStart [0x0x7ffc570fc34c+44]
+</msg>
+<arg>css:input#username</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="FAIL" start="2025-06-30T16:39:22.691017" elapsed="1.368672">ElementClickInterceptedException: Message: element click intercepted: Element &lt;input type="text" class="form-control " name="username" id="username" autocomplete="off" aria-describedby="addon-username" required=""&gt; is not clickable at point (783, 306). Other element would receive the click: &lt;div class="modal-backdrop fade show"&gt;&lt;/div&gt;
+  (Session info: chrome=137.0.7151.120)
+Stacktrace:
+	GetHandleVerifier [0x0x7ff68c94cda5+78885]
+	GetHandleVerifier [0x0x7ff68c94ce00+78976]
+	(No symbol) [0x0x7ff68c709bca]
+	(No symbol) [0x0x7ff68c768779]
+	(No symbol) [0x0x7ff68c766112]
+	(No symbol) [0x0x7ff68c763151]
+	(No symbol) [0x0x7ff68c762041]
+	(No symbol) [0x0x7ff68c753654]
+	(No symbol) [0x0x7ff68c788b8a]
+	(No symbol) [0x0x7ff68c752f06]
+	(No symbol) [0x0x7ff68c788da0]
+	(No symbol) [0x0x7ff68c7b122f]
+	(No symbol) [0x0x7ff68c788963]
+	(No symbol) [0x0x7ff68c7516b1]
+	(No symbol) [0x0x7ff68c752443]
+	GetHandleVerifier [0x0x7ff68cc24eed+3061101]
+	GetHandleVerifier [0x0x7ff68cc1f33d+3037629]
+	GetHandleVerifier [0x0x7ff68cc3e592+3165202]
+	GetHandleVerifier [0x0x7ff68c96730e+186766]
+	GetHandleVerifier [0x0x7ff68c96eb3f+217535]
+	GetHandleVerifier [0x0x7ff68c9559b4+114740]
+	GetHandleVerifier [0x0x7ff68c955b69+115177]
+	GetHandleVerifier [0x0x7ff68c93c368+10728]
+	BaseThreadInitThunk [0x0x7ffc563de8d7+23]
+	RtlUserThreadStart [0x0x7ffc570fc34c+44]
+</status>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<arg>css:input#username</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-06-30T16:39:24.059872" elapsed="0.000028"/>
+</kw>
+<arg>${USER}</arg>
+<status status="FAIL" start="2025-06-30T16:39:22.681353" elapsed="1.378664">ElementClickInterceptedException: Message: element click intercepted: Element &lt;input type="text" class="form-control " name="username" id="username" autocomplete="off" aria-describedby="addon-username" required=""&gt; is not clickable at point (783, 306). Other element would receive the click: &lt;div class="modal-backdrop fade show"&gt;&lt;/div&gt;
+  (Session info: chrome=137.0.7151.120)
+Stacktrace:
+	GetHandleVerifier [0x0x7ff68c94cda5+78885]
+	GetHandleVerifier [0x0x7ff68c94ce00+78976]
+	(No symbol) [0x0x7ff68c709bca]
+	(No symbol) [0x0x7ff68c768779]
+	(No symbol) [0x0x7ff68c766112]
+	(No symbol) [0x0x7ff68c763151]
+	(No symbol) [0x0x7ff68c762041]
+	(No symbol) [0x0x7ff68c753654]
+	(No symbol) [0x0x7ff68c788b8a]
+	(No symbol) [0x0x7ff68c752f06]
+	(No symbol) [0x0x7ff68c788da0]
+	(No symbol) [0x0x7ff68c7b122f]
+	(No symbol) [0x0x7ff68c788963]
+	(No symbol) [0x0x7ff68c7516b1]
+	(No symbol) [0x0x7ff68c752443]
+	GetHandleVerifier [0x0x7ff68cc24eed+3061101]
+	GetHandleVerifier [0x0x7ff68cc1f33d+3037629]
+	GetHandleVerifier [0x0x7ff68cc3e592+3165202]
+	GetHandleVerifier [0x0x7ff68c96730e+186766]
+	GetHandleVerifier [0x0x7ff68c96eb3f+217535]
+	GetHandleVerifier [0x0x7ff68c9559b4+114740]
+	GetHandleVerifier [0x0x7ff68c955b69+115177]
+	GetHandleVerifier [0x0x7ff68c93c368+10728]
+	BaseThreadInitThunk [0x0x7ffc563de8d7+23]
+	RtlUserThreadStart [0x0x7ffc570fc34c+44]
+</status>
+</kw>
+<kw name="Input Password" owner="resource">
+<arg>${PASS}</arg>
+<status status="NOT RUN" start="2025-06-30T16:39:24.060593" elapsed="0.000059"/>
+</kw>
+<kw name="Submit Credentials" owner="resource">
+<status status="NOT RUN" start="2025-06-30T16:39:24.061004" elapsed="0.000042"/>
+</kw>
+<kw name="Welcome Page Should Be Open" owner="resource">
+<status status="NOT RUN" start="2025-06-30T16:39:24.061447" elapsed="0.000055"/>
+</kw>
+<doc>Smoke-test that a valid user can log in</doc>
+<status status="FAIL" start="2025-06-30T16:39:22.680843" elapsed="1.381070">ElementClickInterceptedException: Message: element click intercepted: Element &lt;input type="text" class="form-control " name="username" id="username" autocomplete="off" aria-describedby="addon-username" required=""&gt; is not clickable at point (783, 306). Other element would receive the click: &lt;div class="modal-backdrop fade show"&gt;&lt;/div&gt;
+  (Session info: chrome=137.0.7151.120)
+Stacktrace:
+	GetHandleVerifier [0x0x7ff68c94cda5+78885]
+	GetHandleVerifier [0x0x7ff68c94ce00+78976]
+	(No symbol) [0x0x7ff68c709bca]
+	(No symbol) [0x0x7ff68c768779]
+	(No symbol) [0x0x7ff68c766112]
+	(No symbol) [0x0x7ff68c763151]
+	(No symbol) [0x0x7ff68c762041]
+	(No symbol) [0x0x7ff68c753654]
+	(No symbol) [0x0x7ff68c788b8a]
+	(No symbol) [0x0x7ff68c752f06]
+	(No symbol) [0x0x7ff68c788da0]
+	(No symbol) [0x0x7ff68c7b122f]
+	(No symbol) [0x0x7ff68c788963]
+	(No symbol) [0x0x7ff68c7516b1]
+	(No symbol) [0x0x7ff68c752443]
+	GetHandleVerifier [0x0x7ff68cc24eed+3061101]
+	GetHandleVerifier [0x0x7ff68cc1f33d+3037629]
+	GetHandleVerifier [0x0x7ff68cc3e592+3165202]
+	GetHandleVerifier [0x0x7ff68c96730e+186766]
+	GetHandleVerifier [0x0x7ff68c96eb3f+217535]
+	GetHandleVerifier [0x0x7ff68c9559b4+114740]
+	GetHandleVerifier [0x0x7ff68c955b69+115177]
+	GetHandleVerifier [0x0x7ff68c93c368+10728]
+	BaseThreadInitThunk [0x0x7ffc563de8d7+23]
+	RtlUserThreadStart [0x0x7ffc570fc34c+44]
+</status>
+</test>
+<kw name="Go To Login Page" owner="resource" type="TEARDOWN">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2025-06-30T16:39:24.063854" level="INFO">Opening url 'https://volunteer-smart-beta.nu.ac.th/pwa_main'</msg>
+<arg>${LOGIN URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-06-30T16:39:24.063711" elapsed="0.089301"/>
+</kw>
+<kw name="Click Close Announcement" owner="resource">
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<msg time="2025-06-30T16:39:29.553241" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-8.png"&gt;&lt;img src="selenium-screenshot-8.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-06-30T16:39:29.553490" level="FAIL">Element 'css:div#announcementModal' not visible after 5 seconds.</msg>
+<arg>css:div#announcementModal</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="FAIL" start="2025-06-30T16:39:24.153571" elapsed="5.401379">Element 'css:div#announcementModal' not visible after 5 seconds.</status>
+</kw>
+<msg time="2025-06-30T16:39:29.555098" level="INFO">${popup} = False</msg>
+<var>${popup}</var>
+<arg>Wait Until Element Is Visible</arg>
+<arg>css:div#announcementModal</arg>
+<arg>timeout=5s</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2025-06-30T16:39:24.153403" elapsed="5.401720"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>${popup}</arg>
+<arg>Execute Javascript</arg>
+<arg>document.querySelector('#announcementModal').remove();</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-06-30T16:39:29.555270" elapsed="0.000127"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>${popup}</arg>
+<arg>Sleep</arg>
+<arg>1s</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-06-30T16:39:29.555499" elapsed="0.000136"/>
+</kw>
+<doc>Remove announcement modal if present</doc>
+<status status="PASS" start="2025-06-30T16:39:24.153222" elapsed="5.402488"/>
+</kw>
+<kw name="Login Page Should Be Open" owner="resource">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>css:input#username</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-06-30T16:39:29.556075" elapsed="0.012722"/>
+</kw>
+<doc>Wait until the login form appears</doc>
+<status status="PASS" start="2025-06-30T16:39:29.555874" elapsed="0.013030"/>
+</kw>
+<status status="PASS" start="2025-06-30T16:39:24.063501" elapsed="5.505451"/>
+</kw>
+<status status="FAIL" start="2025-06-30T16:39:18.661423" elapsed="10.907563"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Valide Login" id="s1" pass="0" fail="1" skip="0">Valide Login</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
