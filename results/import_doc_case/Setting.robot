@@ -1,0 +1,22 @@
+*** Settings ***
+Library    SeleniumLibrary
+Library    ../Libraly/VariablesRandom.py
+Library    ../Libraly/NotebookLibrary.py
+Library    ../Libraly/DataLibraly.py
+Resource    Variables.robot
+Resource    ./Resource/Login_Vsmart.robot
+Resource    ./Resource/Import_Doc_Case.robot
+Resource    ./Resource/Consent_Form.robot
+Resource    ./Resource/Informer.robot
+Resource    ./Resource/People_Problem.robot
+Resource    ./Resource/Family_Member.robot
+Resource    ./Resource/Info_About_Informer.robot
+Resource    ./Resource/Random.robot
+Resource    ./Resource/Checkbox_Form_Five.robot
+Resource    ./Resource/Checkbox_Form_Six.robot
+Resource    ./Resource/Checkbox_Form_Seven.robot
+Resource    ./Resource/Checkbox_Form_Eight.robot
+Resource    ./Resource/Home_inspect.robot
+Resource    ./Resource/Order.robot
+Resource    ./Resource/dw_department.robot
+Resource    ./Resource/Google_Sheet.robot
